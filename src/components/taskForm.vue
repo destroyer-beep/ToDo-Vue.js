@@ -8,7 +8,6 @@
                 name="header"
                 type="text"
                 placeholder="Введите название задачи"
-                required
         >
         <label class="form__label" for="description">Описание</label>
         <input
@@ -18,7 +17,6 @@
                 name="description"
                 type="text"
                 placeholder="Введите описание задачи"
-                required
         >
         <button class="task__button" @click="createTask">
             Добавить задачу

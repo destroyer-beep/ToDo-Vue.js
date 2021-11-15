@@ -3,6 +3,7 @@
         <h2 class="task__header"><span class="task__header_text">Название задачи:</span> {{task.header}}</h2>
         <p class="task__description"><span class="task__description_text">Описание задачи:</span> {{task.description}}</p>
         <div class="task__info"><div>id: {{task.id}}</div><div>{{task.date}}</div></div>
+        <div class="task__delete" @click="$emit('delete', task)">Удалить</div>
     </div>
 </template>
 
@@ -27,19 +28,24 @@
     font-size: 40px;
 }
 .task__header_text {
-    text-decoration: underline;
     font-weight: 400;
 }
 .task__description {
     font-size: 30px;
-}
-.task__description_text {
-    text-decoration: underline;
 }
 .task__info {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+}
+.task__delete {
+    margin-top: 10px;
+    padding: 10px 10px 10px 20px;
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+    border: 1px solid red;
+    width: 100px;
 }
 </style>

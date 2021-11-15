@@ -4,7 +4,10 @@
 
 <task-form @create="createTask"/>
 
-<task-list :tasks="tasks"/>
+<task-list
+        :tasks="tasks"
+        @delete="deleteTask"
+/>
 
 </template>
 
@@ -25,6 +28,9 @@
         methods: {
             createTask(task) {
                 this.tasks.push(task);
+            },
+            deleteTask(task) {
+                this.tasks = this.tasks.filter(item => item.id !== task.id);
             }
         }
     }
